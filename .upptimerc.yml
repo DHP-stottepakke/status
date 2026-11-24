@@ -2,6 +2,12 @@ owner: DHP-stottepakke
 repo: status
 user-agent: DHP-stottepakke
 
+# Assigned to every downtime issue; GitHub emails assignees when an issue opens or closes
+assignees:
+  - korbinib
+  - bianchini88
+  - jennyostrop
+
 sites:
   - name: FAIR Wizard Norway (preview)
     url: https://norway.preview.fair-wizard.com/
