@@ -1,0 +1,37 @@
+owner: DHP-stottepakke
+repo: status
+user-agent: DHP-stottepakke
+
+sites:
+  - name: FAIR Wizard Norway (preview)
+    url: https://norway.preview.fair-wizard.com/
+  - name: FAIR Wizard Norway
+    url: https://norway.fair-wizard.com
+  - name: DSW ELIXIR Norway
+    url: https://norway.dsw.elixir-europe.org
+  - name: Research Data Planner
+    url: https://plan.research-data.no/pages
+  - name: Policies API
+    url: https://api.research-data.no/policies/search
+    # Down if the response is not the expected schema.org ItemList
+    __dangerous__body_down_if_text_missing: "itemListElement"
+  - name: REK API health
+    url: https://api.research-data.no/rek/health
+    # Down unless the body reports {"status": "ok"}
+    __dangerous__body_down_if_regex_missing: '"status":\s*"ok"'
+
+status-website:
+  baseUrl: /status
+  name: DHP Status
+  introTitle: "Status for DHP / research-data.no services"
+  introMessage: "Availability of the FAIR Wizard Norway instances and the research-data.no APIs. Outages and incidents are tracked as [GitHub issues](https://github.com/DHP-stottepakke/status/issues)."
+  navbar:
+    - title: Status
+      href: /status
+    - title: GitHub
+      href: https://github.com/$OWNER/$REPO
+
+workflowSchedule:
+  uptime: "*/15 * * * *"
+
+# See https://upptime.js.org/docs/configuration for all options
